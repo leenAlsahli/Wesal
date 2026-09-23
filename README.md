@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/logo.png" alt="Wesal Logo" width="240">
+  <img src="wesal-app/src/assets/logo.png" alt="Wesal Logo" width="240">
 </p>
 
 
