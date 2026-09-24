@@ -2,11 +2,18 @@
   <img src="wesal-app/src/assets/logo.png" alt="Wesal Logo" width="240">
 </p>
 
-
 A complete database design project for a help desk system called **Wesal** — a name that reflects connection and communication, bridging the gap between inquiry and response to deliver the right support at the right time.
 
 ## Overview
-Wesal was built as an end-to-end database design project, following the full academic database design lifecycle: starting from conceptual modeling (ER), moving through enhanced conceptual modeling (EER), mapping the design into a relational schema, implementing it in a live database, and finally connecting it to a functional front-end for real-world interaction — turning a theoretical design exercise into a working help desk platform.
+Wesal is a full-stack help desk platform built from the ground up — starting with a rigorous relational database design (ER modeling, EER refinement, and relational mapping) before evolving into a complete, functioning web application. The project reflects the full lifecycle of building a real product: from conceptual data modeling to a live, connected front end.
+
+## Database Design
+
+<p align="center">
+  <img src="wesal-DataBase/er-diagram.png" alt="Wesal ER Diagram" width="800">
+</p>
+
+Full SQL schema: [`wesal-DataBase/`](wesal-DataBase/)
 
 ## Features
 - Ticket submission and tracking for support requests
@@ -27,7 +34,6 @@ Wesal was built as an end-to-end database design project, following the full aca
 3. **Mapping:** Translated the EER model into a relational schema, defining tables, keys, and constraints.
 4. **Implementation:** Implemented the finalized schema in Supabase (PostgreSQL), populating it with structured data to support the system's operations.
 5. **Front-End Integration:** Connected the Vue.js front end to Supabase, using HTML/CSS for layout and design, JavaScript for interactivity, and Supabase's real-time subscriptions to keep the ticket dashboard live without manual refreshing.
-
 
 ## Author's Contribution
 Leen Alsahli — [LinkedIn](https://linkedin.com/in/leen-alsahli-1064a6305) | [Portfolio](https://leen-portfolio-inky.vercel.app)
