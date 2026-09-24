@@ -63,6 +63,17 @@
               </div>
             </form>
 
+            <!-- Demo Account -->
+            <div class="demo-box">
+              <p class="demo-title">Demo account</p>
+              <p class="demo-creds">{{ demoAccount.email }} / {{ demoAccount.password }}</p>
+              <button type="button" class="demo-btn" @click="fillDemo">Use demo account</button>
+              <p class="demo-note">
+                Or <router-link to="/create-account" class="demo-link">create your own account</router-link>
+                to try the full sign-up flow.
+              </p>
+            </div>
+
             <div class="card-extra-links">
               <router-link to="/forgot-password" class="nexus-link">Forgot password?</router-link>
               <span class="link-sep">•</span>
@@ -96,6 +107,12 @@ import { supabase } from '../supabase'
 
 const router = useRouter()
 
+// TODO: replace with your real demo account (it must exist in the database)
+const demoAccount = {
+  email: 'demo@wesal.com',
+  password: 'demo1234',
+}
+
 const email = ref('')
 const password = ref('')
 const loading = ref(false)
@@ -107,6 +124,13 @@ const triggerMsg = (msg, errorStatus) => {
   statusMessage.value = msg
   isError.value = errorStatus
   setTimeout(() => { statusMessage.value = '' }, 4000)
+}
+
+const fillDemo = () => {
+  email.value = demoAccount.email
+  password.value = demoAccount.password
+  isError.value = false
+  statusMessage.value = ''
 }
 
 const handleLogin = async () => {
@@ -230,6 +254,15 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .prime-action-btn { width: 100%; max-width: 300px; margin: 0 auto; display: block; padding: 20px; background: #1e293b; color: white; border: none; border-radius: 16px; font-weight: 800; font-size: 13px; cursor: pointer; transition: 0.3s; }
 .prime-action-btn:hover { background: #3498db; transform: translateY(-2px); }
 .prime-action-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Demo account */
+.demo-box { margin-top: 28px; padding: 16px 18px; border-radius: 16px; background: #f8fafc; border: 1px solid #f1f5f9; text-align: center; }
+.demo-title { margin: 0 0 4px; font-size: 12px; font-weight: 800; color: #64748b; }
+.demo-creds { margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #1e293b; font-family: monospace; word-break: break-all; }
+.demo-btn { padding: 10px 18px; background: transparent; color: #3498db; border: 2px solid #3498db; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; transition: 0.3s; font-family: 'Plus Jakarta Sans', sans-serif; }
+.demo-btn:hover { background: #3498db; color: white; }
+.demo-note { margin: 12px 0 0; font-size: 12px; color: #94a3b8; font-weight: 500; }
+.demo-link { color: #3498db; font-weight: 700; text-decoration: underline; }
 
 .card-extra-links { text-align: center; margin-top: 28px; font-size: 13px; }
 .nexus-link { text-decoration: none; font-size: 13px; font-weight: 700; color: #94a3b8; }
