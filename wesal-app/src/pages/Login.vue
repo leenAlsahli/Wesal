@@ -23,17 +23,15 @@
     </header>
 
     <main class="master-stage">
-      <div class="central-brand">
-        <img src="../assets/logo.png" alt="Wesal Logo" class="master-logo" />
-        <h2 class="brand-sub-title">Help Desk management system</h2>
-      </div>
-
       <div class="perspective-box" :style="cardTransform">
         <div class="panoramic-card">
           <div class="card-inner-glow"></div>
 
           <div class="card-content">
-            <h3 class="form-title-simple">WELCOME BACK</h3>
+            <div class="card-brand">
+              <img src="../assets/logo.png" alt="Wesal Logo" class="card-logo" />
+              <h2 class="brand-sub-title">Help Desk management system</h2>
+            </div>
             <p class="form-instruction">Sign in to reach your support workspace.</p>
 
             <form @submit.prevent="handleLogin" class="panoramic-form" novalidate>
@@ -192,14 +190,14 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .status-label { font-size: 10px; font-weight: 800; color: #cbd5e1; margin-left: 8px; }
 
 .master-stage { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; position: relative; z-index: 10; }
-.central-brand { margin-bottom: 40px; text-align: center; }
-.master-logo { width: 320px; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.05)); }
-.brand-sub-title { margin-top: 15px; font-size: 14px; font-weight: 600; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase; }
+
+.card-brand { text-align: center; margin-bottom: 14px; }
+.card-logo { width: 200px; max-width: 100%; }
+.brand-sub-title { margin-top: 12px; font-size: 12px; font-weight: 600; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase; }
 
 .perspective-box { width: 100%; max-width: 480px; }
 .panoramic-card { background: white; border-radius: 40px; padding: 60px 60px; box-shadow: 0 40px 120px rgba(30, 41, 59, 0.06); border: 1px solid #f8fafc; }
 
-.form-title-simple { font-size: 26px; font-weight: 800; color: #1e293b; text-align: center; margin-bottom: 8px; letter-spacing: -0.5px; }
 .form-instruction { font-size: 13px; color: #94a3b8; text-align: center; margin-bottom: 40px; font-weight: 500; }
 
 .form-row { margin-bottom: 30px; }
@@ -255,8 +253,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   .nexus-header { padding: 0 20px; height: 65px; }
   .status-label { display: none; }
   .master-stage { padding: 30px 15px; }
-  .master-logo { width: 220px; }
-  .brand-sub-title { font-size: 11px; }
+  .card-logo { width: 160px; }
+  .brand-sub-title { font-size: 10px; }
   .panoramic-card { padding: 35px 20px; border-radius: 30px; }
   .wesal-footer { padding: 30px 20px; }
   .footer-inner { flex-direction: column; gap: 15px; text-align: center; }
@@ -265,7 +263,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 }
 
 @media (max-width: 480px) {
-  .master-logo { width: 180px; }
+  .card-logo { width: 140px; }
   .input-wrapper input { font-size: 16px; }
   .prime-action-btn { padding: 16px; font-size: 12px; }
 }
